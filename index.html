@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bieninforma2 — Noticias verificadas en formato corto</title>
+<meta name="description" content="Bieninforma2: noticias virales contrastadas y verificadas en formato Shorts. Sígueme en YouTube y WhatsApp.">
+<style>
+  :root {
+    --bg: #0b0d12;
+    --bg-card: #14171f;
+    --text: #f2f4f8;
+    --text-dim: #9aa3b2;
+    --accent: #3ddc84;
+    --accent-2: #4f8cff;
+    --border: #232838;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+  }
+  body {
+    background: radial-gradient(circle at 50% 0%, #161a24 0%, var(--bg) 60%);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 48px 20px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(61, 220, 132, 0.1);
+    border: 1px solid rgba(61, 220, 132, 0.3);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+  .badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #0b0d12;
+    margin-bottom: 24px;
+    box-shadow: 0 12px 40px -8px rgba(61, 220, 132, 0.35);
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--text-dim);
+    text-align: center;
+    max-width: 520px;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 440px;
+    margin-top: 40px;
+  }
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .link-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: #171b25;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+  .icon.youtube { background: rgba(255, 0, 0, 0.12); color: #ff4d4d; }
+  .icon.whatsapp { background: rgba(37, 211, 102, 0.12); color: #25d366; }
+  .icon.tiktok { background: rgba(255,255,255,0.08); color: #f2f4f8; }
+  .link-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .link-text span {
+    display: block;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  footer {
+    margin-top: 56px;
+    color: #565e70;
+    font-size: 13px;
+    text-align: center;
+  }
+  footer a { color: #7a8296; }
+</style>
+</head>
+<body>
+  <div class="badge">Noticias verificadas · Shorts</div>
+  <div class="logo">B2</div>
+  <h1>Bieninforma2</h1>
+  <p class="subtitle">
+    Noticias virales, contrastadas y verificadas, en formato corto.
+    Sin ruido, sin bulos — solo lo que importa, en menos de un minuto.
+  </p>
+
+  <div class="links">
+    <a class="link-card" href="https://www.youtube.com/@bieninforma2" target="_blank" rel="noopener">
+      <div class="icon youtube">▶</div>
+      <div class="link-text">
+        <strong>YouTube — @bieninforma2</strong>
+        <span>Shorts de noticias verificadas cada día</span>
+      </div>
+    </a>
+
+    <a class="link-card" href="#" target="_blank" rel="noopener" id="whatsapp-link">
+      <div class="icon whatsapp">💬</div>
+      <div class="link-text">
+        <strong>Canal de WhatsApp</strong>
+        <span>Recibe los nuevos vídeos al instante</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Bieninforma2 — Contenido verificado, sin sesgos.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
